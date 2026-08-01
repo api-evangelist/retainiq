@@ -1,7 +1,26 @@
 aid: retainiq
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/retainiq.png
 name: RetainIQ
-description: 'RetainIQ is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+description: 'RetainIQ is a full-service retention-marketing agency for direct-to-consumer
+  (D2C) brands, delivering lifecycle email and SMS programs. Its work spans automated
+  flows (welcome, cart abandonment, post-purchase, win-back, replenishment), weekly
+  strategic campaign sends with design and copywriting, and deliverability/segmentation/list-hygiene
+  infrastructure. A proprietary 1:1 personalization engine generates variant product
+  blocks at scale. A Klaviyo Gold Master Partner and Omnisend partner, RetainIQ integrates
+  with Shopify, Klaviyo, and Omnisend; plans start at $990/mo on month-to-month terms.
+  It operates as a marketing-services agency and does not publish a public developer
+  API, SDK, or documentation surface.'
 url: https://raw.githubusercontent.com/api-evangelist/retainiq/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,10 +30,17 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Ai
+- Retention Marketing
+- Email Marketing
+- SMS
+- Ecommerce
+- Personalization
+- D2C
+- Klaviyo
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,4 +49,19 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://retainiq.io/?
+  url: https://retainiq.io/
+- type: PrivacyPolicy
+  url: https://retainiq.io/privacy-policy
+- type: TermsOfService
+  url: https://retainiq.io/terms-and-conditions
+- type: Blog
+  url: https://retainiq20.substack.com/
+- type: Support
+  url: mailto:hello@retainiq.io
+- type: DomainSecurity
+  url: security/retainiq-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
