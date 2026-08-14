@@ -1,14 +1,15 @@
 aid: retainiq
 accessModel:
-  pricing: unknown
+  pricing: freemium
   onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-08-13'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/retainiq.png
 name: RetainIQ
@@ -20,7 +21,11 @@ description: 'RetainIQ is a full-service retention-marketing agency for direct-t
   blocks at scale. A Klaviyo Gold Master Partner and Omnisend partner, RetainIQ integrates
   with Shopify, Klaviyo, and Omnisend; plans start at $990/mo on month-to-month terms.
   It operates as a marketing-services agency and does not publish a public developer
-  API, SDK, or documentation surface.'
+  API, SDK, or documentation surface. RetainIQ Global Inc. previously shipped a self-serve
+  Shopify app (listed 2021, free to install, $999 per 100K personalization credits); that
+  listing is still live but appears retired in place — its application host returns a
+  Cloudflare 522 and the developer website named on the listing now redirects to a
+  domain-for-sale page.'
 url: https://raw.githubusercontent.com/api-evangelist/retainiq/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -30,7 +35,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Ai
@@ -60,8 +65,44 @@ common:
   url: mailto:hello@retainiq.io
 - type: DomainSecurity
   url: security/retainiq-domain-security.yml
+- type: Pricing
+  url: https://retainiq.io/services
+- type: Plans
+  url: plans/retainiq-plans-pricing.yml
+- type: Lifecycle
+  url: lifecycle/retainiq-lifecycle.yml
+- type: LLMsTxt
+  url: llms/retainiq-llms.txt
+- type: AppStore
+  url: https://apps.shopify.com/retainiq
+- type: Newsletter
+  url: https://retainiq.io/resources
+- type: LinkedIn
+  url: https://www.linkedin.com/company/retainiq/
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 4
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    RetainIQ sells a managed retention-marketing service, not software with an interface — every
+    contract and /.well-known/ path on retainiq.io returns a real 404, its former self-serve Shopify
+    app host app.retainiq.io returns Cloudflare 522, and the developer website that app listing names
+    (wyde.ai) now redirects to a domain-for-sale page.
+  evidence:
+  - url: https://retainiq.io/openapi.json
+    status: 404
+  - url: https://retainiq.io/.well-known/agent-card.json
+    status: 404
+  - url: https://retainiq.io/llms.txt
+    status: 404
+  - url: https://app.retainiq.io/
+    status: 522
+  - url: https://www.wyde.ai/
+    status: 302
+  - url: https://apps.shopify.com/retainiq
+    status: 200
+  checked: '2026-08-13'
