@@ -1,0 +1,96 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: RetainIQ
+providerId: retainiq
+created: '2026-08-13'
+modified: '2026-08-13'
+generated: '2026-08-13'
+method: searched
+source: https://retainiq.io/services
+plan_count: 2
+tags:
+- Retention Marketing
+- Email Marketing
+- SMS
+- Ecommerce
+- Personalization
+- Plans
+description: >-
+  RetainIQ prices two distinct things, and they are not the same product. (1) The retention-marketing
+  SERVICE sold at retainiq.io — a managed lifecycle email and SMS engagement, published as an entry
+  price of $990/month on month-to-month terms, with the actual scope quoted per brand rather than
+  sold as fixed tiers. (2) The RetainIQ Shopify app — free to install, then metered on personalization
+  CREDITS at $999 per 100,000 credits after 20,000 free credits per month, billed in USD. There is no
+  API plan, no developer tier and no rate-limit-bearing plan of any kind, because RetainIQ publishes
+  no public API.
+notes: >-
+  The $990/month service price is stated on retainiq.io/services alongside three named engagement
+  models (Synergy, Full Service, Off Season); those are delivery shapes, not priced tiers, so they are
+  not enumerated as plans. The Shopify credit price is quoted verbatim from the app listing's own
+  Pricing section. Note that the Shopify app's stated developer website (wyde.ai) now redirects to a
+  domain-for-sale listing and the app host app.retainiq.io returns Cloudflare 522, so the app plan is
+  recorded as published-but-unverified rather than as a live self-serve path — see
+  lifecycle/retainiq-lifecycle.yml.
+sources:
+- https://retainiq.io/services
+- https://apps.shopify.com/retainiq
+plans:
+- id: retainiq-managed-retention
+  name: Managed Retention Program
+  type: subscription
+  description: >-
+    Full-service lifecycle email and SMS retention program for D2C brands — flows, weekly campaign
+    sends, deliverability and list hygiene, design and copy, and the 1:1 personalization engine.
+    Month-to-month, no retainer lock-in. Scope and final price are quoted per brand.
+  entries:
+  - label: Entry price
+    name: program_monthly
+    type: recurring
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: from $990 USD per month
+    userMultiplied: false
+  onboarding: sales-assisted
+  onboarding_url: https://calendly.com/d/cnnf-mwb-327/get-a-free-consultation
+  source: https://retainiq.io/services
+- id: retainiq-shopify-app-free
+  name: Free (Shopify app)
+  type: usage-based
+  description: >-
+    The RetainIQ Shopify app is free to install and metered on personalization credits. Quoted
+    verbatim from the listing: "Free to install. Credits will be charged at $999 / 100K credits after
+    20k free credits/month. All charges are billed in USD."
+  entries:
+  - label: Included credits
+    name: credits_included
+    type: quota
+    metric: credits
+    limit: 20000
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: '0'
+    userMultiplied: false
+  - label: Overage credits
+    name: credits_overage
+    type: metered
+    metric: credits
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 100000
+    price: $999 USD per 100,000 credits
+    userMultiplied: false
+  onboarding: self-serve
+  onboarding_url: https://apps.shopify.com/retainiq
+  source: https://apps.shopify.com/retainiq
+api_plans:
+  published: false
+  note: >-
+    RetainIQ publishes no API plans, no developer tier and no per-call pricing. Contract discovery
+    (2026-08-13) found no OpenAPI, GraphQL, MCP or A2A surface on any host they control — see
+    well-known/retainiq-well-known.yml for the full probe table.

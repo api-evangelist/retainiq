@@ -1,0 +1,127 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/*, /llms.txt and common OpenAPI paths on every RetainIQ host
+summary: >-
+  RetainIQ publishes no /.well-known/ discovery surface on any host it controls. Every
+  well-known path returns a real HTTP 404 from the Next.js marketing site at retainiq.io
+  (a genuine 404, not an SPA soft-200 shell), and every REST/GraphQL contract path 404s
+  alongside them. NO WellKnown or SecurityTxt pointer is emitted from this file — this
+  artifact records a verified ABSENCE, not a presence. The only machine-readable surface
+  found anywhere on the domain is the WordPress core REST API exposed by the legacy blog
+  at retainiq.io/blog/wp-json/ — that is platform-provided by WordPress, not a RetainIQ
+  product API, so it is recorded here and deliberately NOT wired as an API in apis.yml.
+hosts:
+- host: https://retainiq.io
+  note: Next.js marketing site — the company's live primary host.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /v1/openapi.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /redoc
+    status: 404
+  - path: /graphql
+    status: 404
+  - path: /api
+    status: 404
+  - path: /sitemap.xml
+    status: 404
+  - path: /robots.txt
+    status: 200
+    note: >-
+      Served, but carries ONLY the Cloudflare Content Signals Policy comment preamble —
+      24 lines, every one of them a comment. There is not a single User-agent, Disallow or
+      Content-Signal directive in the file, so it expresses no crawl or AI-usage policy at all.
+      Not counted as a consent/identity signal.
+  - path: /blog/wp-json/
+    status: 200
+    note: >-
+      WordPress core REST API discovery document for the legacy WordPress blog mounted at
+      /blog/. Platform-provided by WordPress, not a RetainIQ product API — /blog/wp-json/wp/v2/posts
+      also returns 200 with post JSON. NOT wired as an API in apis.yml, because crediting a
+      CMS's built-in content API to the provider would misstate their developer surface.
+- host: https://app.retainiq.io
+  note: >-
+    The former self-serve SaaS application host for the RetainIQ Shopify app. DNS resolves
+    (Cloudflare), but the origin is gone.
+  documents:
+  - path: /
+    status: 522
+    note: Cloudflare 522 — connection timed out to origin.
+  - path: /openapi.json
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /swagger.json
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /api-docs
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /v1/openapi.json
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /graphql
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /.well-known/security.txt
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+  - path: /robots.txt
+    status: 0
+    note: 'Cloudflare "error code: 1034"; no HTTP status returned.'
+- host: https://help.retainiq.io
+  note: CNAME to 21275651.group1.sites.hubspot.net — HubSpot-hosted help centre, misconfigured at the edge.
+  documents:
+  - path: /
+    status: 403
+    note: 'Cloudflare "error code: 1034". The help centre is not reachable.'
+- host: https://www.wyde.ai
+  note: >-
+    Listed on the Shopify App Store as the developer website for "RetainIQ Global Inc." —
+    included here because the provider itself names it, not because it is a RetainIQ domain today.
+  documents:
+  - path: /
+    status: 302
+    note: >-
+      Redirects to https://www.atom.com/name/WYDE.ai — the domain is parked and listed FOR SALE on
+      the Atom (formerly Squadhelp) marketplace. No RetainIQ content is served from it.
+nxdomain:
+- api.retainiq.io
+- docs.retainiq.io
+- developer.retainiq.io
+- developers.retainiq.io
+- dashboard.retainiq.io
+- status.retainiq.io
+- trust.retainiq.io
+- admin.retainiq.io
+not_owned:
+- host: retainiq.com
+  status: 404
+  note: >-
+    A Squarespace-hosted site (ext-sq.squarespace.com) returning 404 at the root. Unrelated to
+    this company, whose canonical domain is retainiq.io. Probed and excluded so a later round
+    does not mistake it for a RetainIQ host.

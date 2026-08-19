@@ -1,0 +1,80 @@
+generated: '2026-08-13'
+method: probed
+source: live probes of retainiq.io, app.retainiq.io, help.retainiq.io and the Shopify App Store listing
+summary: >-
+  RetainIQ has no API to version, deprecate or SLA, so the conventional lifecycle fields are all
+  empty. What this artifact records instead is a PRODUCT lifecycle observation with direct bearing on
+  how the company should be read: the self-serve SaaS product that RetainIQ shipped as a Shopify app
+  in 2021 appears to have been retired without being delisted, while the company itself has moved to
+  selling a managed retention-marketing service at retainiq.io. Three independent probes point the
+  same way, and no first-party announcement of the change was found.
+versioning:
+  scheme: none
+  current: null
+  detail: >-
+    No API, no versioned contract, no version header or URI-path version anywhere on the domain.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  detail: >-
+    No deprecation policy is published, and RFC 8594 Sunset/Deprecation headers are not applicable —
+    there is no API surface to carry them.
+status_page:
+  url: null
+  published: false
+  detail: >-
+    status.retainiq.io is NXDOMAIN and no third-party status page (Statuspage, Instatus, Better Stack)
+    is linked from any RetainIQ page.
+sla:
+  published: false
+  detail: No uptime or support SLA is published. Support is an email address, hello@retainiq.io.
+product_lifecycle:
+  observation: >-
+    The RetainIQ self-serve app appears retired-in-place: still listed, no longer operable.
+  evidence:
+  - item: RetainIQ Shopify app listing
+    url: https://apps.shopify.com/retainiq
+    status: 200
+    detail: >-
+      Still live and installable-looking. Launched 2021-08-23, rated 5.0 from 39 reviews, developer
+      "RetainIQ Global Inc.", privacy policy https://retainiq.io/privacy-policy/. The listing has not
+      been withdrawn.
+  - item: Application host
+    url: https://app.retainiq.io/
+    status: 522
+    detail: >-
+      DNS resolves to Cloudflare but the origin does not answer — Cloudflare 522 at the root and
+      "error code: 1034" on every sub-path. The app a merchant would land in after installing is down.
+  - item: Developer website named on the Shopify listing
+    url: https://www.wyde.ai/
+    status: 302
+    detail: >-
+      302 to https://www.atom.com/name/WYDE.ai — the domain is parked and listed FOR SALE on the Atom
+      naming marketplace. The website the app listing gives as the developer's own is no longer
+      operated by anyone.
+  - item: Help centre
+    url: https://help.retainiq.io/
+    status: 403
+    detail: >-
+      CNAME points at HubSpot site hosting (21275651.group1.sites.hubspot.net) but the edge returns
+      Cloudflare "error code: 1034". Merchant documentation is unreachable.
+  - item: Legacy blog
+    url: https://retainiq.io/blog/
+    status: 200
+    detail: >-
+      A WordPress instance still mounted under /blog/, most recent post JSON dated 2024. Superseded by
+      the newsletter archive at /resources and the Substack at retainiq20.substack.com, which carries
+      2026-dated editions.
+  what_the_company_sells_now:
+    detail: >-
+      retainiq.io today markets a full-service retention-marketing engagement — flows, campaigns,
+      deliverability, and a 1:1 personalization engine that plugs into Klaviyo, Omnisend and Shopify —
+      priced from $990/month, entered through a Calendly consultation rather than a signup form. Two
+      productised widgets are named on /apps (Dynamic Email Widgets, Enhanced Catalog Ads), both sold
+      through a demo booking with no self-serve install and no technical documentation.
+    source: https://retainiq.io/services
+  caveat: >-
+    No first-party statement of retirement was found. RetainIQ has published no changelog, no sunset
+    notice and no migration guidance for the Shopify app. This is a probed inference from the state of
+    their own hosts, recorded with its evidence so it can be corrected if the company says otherwise.

@@ -1,0 +1,94 @@
+# RetainIQ
+
+> RetainIQ is a retention-marketing company for direct-to-consumer (D2C) ecommerce brands, operating
+> from retainiq.io as RetainIQ Global Inc. (Wilmington, DE) and RetainIQ India Private Limited
+> (Bengaluru). It sells a managed lifecycle email and SMS program — welcome, cart-abandonment,
+> post-purchase, win-back and replenishment flows, weekly strategic campaign sends with design and
+> copy, and deliverability, segmentation and list-hygiene work — layered on a proprietary 1:1
+> personalization engine that generates variant product blocks at scale. It is a Klaviyo Gold Master
+> Partner and an Omnisend partner, and integrates with Shopify, Recharge, Mailchimp and Nudge.
+> Programs start at $990/month on month-to-month terms.
+
+## IMPORTANT — no developer API
+
+RetainIQ publishes **no public API**. As of 2026-08-13 there is no OpenAPI or Swagger document, no
+GraphQL endpoint, no MCP server, no A2A agent card, no SDK in any public package registry, no CLI, no
+first-party GitHub organisation, no developer portal and no API reference on any host the company
+controls. Every `/.well-known/*` and contract path on retainiq.io returns a real HTTP 404. Do not
+generate integration code, endpoints, authentication headers or base URLs for RetainIQ — none exist to
+call. Access to their capability is a sales conversation, not a credential.
+
+The only machine-readable surface on the domain is the WordPress core REST API at
+`https://retainiq.io/blog/wp-json/`, which is supplied by the WordPress CMS running their legacy blog.
+It is not a RetainIQ product API and exposes only blog content.
+
+## Products
+
+- [Managed retention system](https://retainiq.io/services): Lifecycle email and SMS across five
+  stages — Capture, Welcome & First Purchase, Repeat & Nurture, Loyalty, True Retention — with
+  deliverability and 1:1 personalization running underneath. Sold in three engagement shapes:
+  Synergy (alongside an in-house team), Full Service (end-to-end), Off Season (seasonal).
+- [Dynamic Email Widgets](https://retainiq.io/apps): Plug-and-play widgets that personalize emails in
+  real time from the brand's own customer data. Demo-gated; no self-serve install, no documentation.
+- [Enhanced Catalog Ads](https://retainiq.io/apps): On-brand catalog ads generated across every SKU at
+  once for Meta and TikTok. Demo-gated; no self-serve install, no documentation.
+- [RetainIQ on the Shopify App Store](https://apps.shopify.com/retainiq): The company's 2021 self-serve
+  Shopify app — free to install, then $999 per 100,000 personalization credits after 20,000 free
+  credits/month. **Caution:** the listing is still live, but the application host (app.retainiq.io)
+  returns Cloudflare 522 and the developer website named on the listing (wyde.ai) now redirects to a
+  domain-for-sale page. Treat this app as retired-in-place unless the company says otherwise.
+
+## Integrations
+
+- Klaviyo (Gold Master Partner)
+- Omnisend (partner)
+- Shopify
+- Recharge
+- Mailchimp
+- Nudge
+- Meta and TikTok (catalog ads)
+
+These are platforms RetainIQ's team and personalization engine operate *inside* on a client's behalf.
+RetainIQ consumes those platforms' APIs; it does not expose one of its own.
+
+## Pricing
+
+- Managed program: from **$990 USD/month**, month-to-month, scoped per brand. See
+  [Services](https://retainiq.io/services).
+- Shopify app: free to install; **$999 per 100K credits** after 20K free credits/month, billed in USD.
+  See [the app listing](https://apps.shopify.com/retainiq).
+- Full structure: [plans/retainiq-plans-pricing.yml](../plans/retainiq-plans-pricing.yml)
+
+## Company
+
+- Website: https://retainiq.io/
+- Contact: hello@retainiq.io
+- Book a consultation: https://calendly.com/d/cnnf-mwb-327/get-a-free-consultation
+- LinkedIn: https://www.linkedin.com/company/retainiq/
+- Newsletter ("The AdVantage", twice weekly): https://retainiq.io/resources and
+  https://retainiq20.substack.com/
+- Legacy blog: https://retainiq.io/blog/
+- Privacy policy: https://retainiq.io/privacy-policy
+- Cookie policy: https://retainiq.io/cookie-policy
+- Terms and conditions: https://retainiq.io/terms-and-conditions
+- Legal entities: RetainIQ Global Inc., 1007 N Orange St, 4th Floor Suite #1558, Wilmington, DE 19801,
+  United States; RetainIQ India Private Limited, Ikeva, Level 8, Tower 1, Umiya Business Bay, Cessna
+  Business Park, Outer Ring Rd, Marathahalli, Bengaluru, Karnataka 560103, India.
+- Backed by: Accel
+
+## Security and compliance posture
+
+- No `/.well-known/security.txt`, no published vulnerability-disclosure policy, no bug bounty, no
+  trust centre, and no named certification (no SOC 2, ISO 27001, PCI, HIPAA or FedRAMP claim appears
+  in the privacy policy or anywhere else on the site).
+- Domain: HTTPS with TLS 1.2, no HSTS, no DNSSEC, no CAA records; SPF and DMARC are published, DMARC
+  policy `p=none`. See [security/retainiq-domain-security.yml](../security/retainiq-domain-security.yml).
+- Privacy contact: sulakshan@retainiq.io (named in the privacy policy; not a security contact).
+
+## Provenance
+
+This file was **generated by API Evangelist** from the RetainIQ APIs.json profile and the artifacts in
+this repository — RetainIQ does not publish an llms.txt of its own (`https://retainiq.io/llms.txt`
+returns 404). Probe evidence: [well-known/retainiq-well-known.yml](../well-known/retainiq-well-known.yml).
+Product-lifecycle evidence: [lifecycle/retainiq-lifecycle.yml](../lifecycle/retainiq-lifecycle.yml).
+Generated 2026-08-13. Source of record: https://github.com/api-evangelist/retainiq
