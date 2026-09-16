@@ -24,19 +24,17 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/retainiq.png
 name: RetainIQ
-description: 'RetainIQ is a full-service retention-marketing agency for direct-to-consumer
-  (D2C) brands, delivering lifecycle email and SMS programs. Its work spans automated
-  flows (welcome, cart abandonment, post-purchase, win-back, replenishment), weekly
-  strategic campaign sends with design and copywriting, and deliverability/segmentation/list-hygiene
-  infrastructure. A proprietary 1:1 personalization engine generates variant product
-  blocks at scale. A Klaviyo Gold Master Partner and Omnisend partner, RetainIQ integrates
-  with Shopify, Klaviyo, and Omnisend; plans start at $990/mo on month-to-month terms.
-  It operates as a marketing-services agency and does not publish a public developer
-  API, SDK, or documentation surface. RetainIQ Global Inc. previously shipped a self-serve
-  Shopify app (listed 2021, free to install, $999 per 100K personalization credits); that
-  listing is still live but appears retired in place — its application host returns a
-  Cloudflare 522 and the developer website named on the listing now redirects to a
-  domain-for-sale page.'
+description: RetainIQ is a full-service retention-marketing agency for direct-to-consumer (D2C) brands,
+  delivering lifecycle email and SMS programs. Its work spans automated flows (welcome, cart abandonment,
+  post-purchase, win-back, replenishment), weekly strategic campaign sends with design and copywriting,
+  and deliverability/segmentation/list-hygiene infrastructure. A proprietary 1:1 personalization engine
+  generates variant product blocks at scale. A Klaviyo Gold Master Partner and Omnisend partner, RetainIQ
+  integrates with Shopify, Klaviyo, and Omnisend; plans start at $990/mo on month-to-month terms. It operates
+  as a marketing-services agency and does not publish a public developer API, SDK, or documentation surface.
+  RetainIQ Global Inc. previously shipped a self-serve Shopify app (listed 2021, free to install, $999
+  per 100K personalization credits); that listing is still live but appears retired in place — its application
+  host returns a Cloudflare 522 and the developer website named on the listing now redirects to a domain-for-sale
+  page.
 url: https://raw.githubusercontent.com/api-evangelist/retainiq/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -46,7 +44,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-08-13'
+modified: '2026-09-16'
 tags:
 - Company
 - Artificial Intelligence
@@ -57,6 +55,7 @@ tags:
 - Personalization
 - D2C
 - Klaviyo
+- Direct to Consumer
 tags_raw:
 - Company
 - Ai
@@ -67,6 +66,7 @@ tags_raw:
 - Personalization
 - D2C
 - Klaviyo
+- Direct to Consumer
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -108,11 +108,10 @@ x-enrichment:
 x-coverage:
   state: none
   reason: no-developer-program
-  detail: >-
-    RetainIQ sells a managed retention-marketing service, not software with an interface — every
-    contract and /.well-known/ path on retainiq.io returns a real 404, its former self-serve Shopify
-    app host app.retainiq.io returns Cloudflare 522, and the developer website that app listing names
-    (wyde.ai) now redirects to a domain-for-sale page.
+  detail: RetainIQ sells a managed retention-marketing service, not software with an interface — every
+    contract and /.well-known/ path on retainiq.io returns a real 404, its former self-serve Shopify app
+    host app.retainiq.io returns Cloudflare 522, and the developer website that app listing names (wyde.ai)
+    now redirects to a domain-for-sale page.
   evidence:
   - url: https://retainiq.io/openapi.json
     status: 404
