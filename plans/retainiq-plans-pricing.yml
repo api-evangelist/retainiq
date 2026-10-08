@@ -94,3 +94,30 @@ api_plans:
     RetainIQ publishes no API plans, no developer tier and no per-call pricing. Contract discovery
     (2026-08-13) found no OpenAPI, GraphQL, MCP or A2A surface on any host they control — see
     well-known/retainiq-well-known.yml for the full probe table.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - metered
+  - subscription
+  units:
+  - credit
+  - period
+  plans:
+  - name: Managed Retention Program
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - period
+    periods:
+    - month
+  - name: Free (Shopify app)
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - credit
+    periods:
+    - month
+    - per-use
